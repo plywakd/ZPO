@@ -5,7 +5,6 @@
  */
 package com.mycompany.ZPO06.Controller;
 
-import com.mycompany.ZPO06.Model.Patient;
 import com.mycompany.ZPO06.Repository.VisitRepo;
 import com.mycompany.ZPO06.Model.Visit;
 import java.util.List;

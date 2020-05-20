@@ -8,6 +8,7 @@ package com.mycompany.ZPO06.Controller;
 import com.mycompany.ZPO06.Repository.PatientRepo;
 import com.mycompany.ZPO06.Model.Patient;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,11 @@ public class PatientController {
     public List<Patient> getAll(){
         return (List<Patient>) patientRepo.findAll();
     }
+    
+    public Patient getByPesel(String pesel){
+        return patientRepo.findByPesel(pesel);
+    }
+    
     @GetMapping("/addPatient")
     public void addPatient(Patient patient){
         patientRepo.save(patient);
