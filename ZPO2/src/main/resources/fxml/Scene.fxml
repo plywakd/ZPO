@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.zpo2.FXMLController">
+   <children>
+      <TableView fx:id="fileTable1" onDragDetected="#handleDragDetection" onMouseClicked="#handleMouseAction" prefHeight="400.0" prefWidth="400.0">
+        <columns>
+          <TableColumn fx:id="files" prefWidth="399.0" text="Filenames list" />
+        </columns>
+      </TableView>
+      <Label fx:id="diskSpaceLabel" layoutX="7.0" layoutY="439.0" text="Available disc space : " />
+      <Label layoutX="7.0" layoutY="462.0" text="Actual file path : " />
+      <ChoiceBox fx:id="diskOpt" layoutX="110.0" layoutY="407.0" prefWidth="150.0" />
+      <Label fx:id="selectDisk" layoutX="7.0" layoutY="411.0" text="Select Disk to list:" />
+      <TableView fx:id="fileTable2" layoutX="400.0" onDragDetected="#handleDragDetection" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" onMouseClicked="#handleMouseAction" prefHeight="400.0" prefWidth="400.0">
+        <columns>
+          <TableColumn fx:id="files2" prefWidth="399.0" text="Filenames list" />
+        </columns>
+      </TableView>
+      <Label fx:id="diskSpaceLabel2" layoutX="400.0" layoutY="436.0" text="Available disc space : " />
+      <Label layoutX="400.0" layoutY="459.0" text="Actual file path : " />
+      <ChoiceBox fx:id="diskOpt2" layoutX="503.0" layoutY="407.0" prefWidth="150.0" />
+      <Label fx:id="selectDisk2" layoutX="400.0" layoutY="411.0" text="Select Disk to list:" />
+      <Label layoutX="5.0" layoutY="492.0" text="Create directory :" />
+      <TextField fx:id="newDirName" layoutX="111.0" layoutY="488.0" />
+      <Button fx:id="createNewDir" layoutX="276.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Create" />
+      <Label layoutX="400.0" layoutY="492.0" text="Create directory :" />
+      <TextField fx:id="newDirName2" layoutX="506.0" layoutY="488.0" />
+      <Button fx:id="createNewDir2" layoutX="671.0" layoutY="487.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Create" />
+      <Button fx:id="delDir" layoutX="276.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Delete" />
+      <Label fx:id="filePathLabel" layoutX="109.0" layoutY="462.0" text="-" />
+      <Label fx:id="filePathLabel2" layoutX="501.0" layoutY="459.0" text="-" />
+      <Label layoutX="5.0" layoutY="530.0" prefHeight="17.0" prefWidth="247.0" text="Select Item on table and click button to delete" />
+      <CheckBox fx:id="delDirWithContent" layoutX="130.0" layoutY="551.0" mnemonicParsing="false" />
+      <Label layoutX="5.0" layoutY="551.0" prefHeight="17.0" prefWidth="115.0" text="Delete with content :" />
+      <Button fx:id="dirBack" layoutX="276.0" layoutY="407.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Return" />
+      <Button fx:id="dirBack2" layoutX="671.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Return" />
+      <Button fx:id="moveDir" layoutX="276.0" layoutY="568.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="52.0" text="Move" />
+      <Label layoutX="7.0" layoutY="572.0" prefHeight="45.0" prefWidth="247.0" text="Select Item to move/copy to Item selected in table on Right and click:" wrapText="true" />
+      <Button fx:id="copyDir" layoutX="276.0" layoutY="595.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="51.0" text="Copy" />
+   </children>
+</AnchorPane>

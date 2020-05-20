@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="395.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.zpo5.FXMLController">
+    <children>
+        <Button fx:id="generateObject" layoutX="228.0" layoutY="38.0" onAction="#handleButtonAction" text="Generate" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <TextField fx:id="className" layoutX="6.0" layoutY="38.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="6.0" layoutY="14.0" text="Insert name of class and its package : " />
+      <ListView fx:id="objectMethods" layoutX="3.0" layoutY="113.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="objectParams" layoutX="225.0" layoutY="113.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="6.0" layoutY="90.0" prefHeight="17.0" prefWidth="200.0" text="Object methods:" />
+      <Label layoutX="225.0" layoutY="90.0" prefHeight="17.0" prefWidth="200.0" text="Object fields and their values:" />
+      <Button fx:id="executeObjMethod" layoutX="6.0" layoutY="326.0" onAction="#handleButtonAction" text="Execute" />
+      <Button fx:id="setObjValue" layoutX="224.0" layoutY="326.0" onAction="#handleButtonAction" text="Change to:" />
+      <TextField fx:id="newObjValue" layoutX="305.0" layoutY="326.0" prefHeight="25.0" prefWidth="120.0" />
+    </children>
+</AnchorPane>
