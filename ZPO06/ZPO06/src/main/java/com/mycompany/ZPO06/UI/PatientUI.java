@@ -6,6 +6,7 @@
 
 package com.mycompany.ZPO06.UI;
 
+import com.mycompany.ZPO06.Model.Patient;
 import com.mycompany.ZPO06.Repository.PatientRepo;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
@@ -19,7 +20,31 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Route("patient")
 public class PatientUI extends VerticalLayout{
+    
     public PatientUI(PatientRepo patientRepo){
+        
+        Button login = new Button("SignIn/Login");
+        add(new Text("Witaj"),fl,login);
+        TextField patientLogin = new TextField();
+        login.addClickListener(click->{
+            Optional patient=Optional.ofNullable(patientRepo.findByPesel(peselField.getValue()));
+                if(patient.isPresent()){
+                    patientLogin.setValue("Found Patient: ");
+                }
+                else{
+                    patientLogin.setValue("Adding new Patient ");
+                    if(nameField.isEmpty() || surnameField.isEmpty() || ageField.isEmpty() || peselField.isEmpty()){
+                        patientLogin.setValue("Please input all data!");
+                    }
+                    else{
+                        patientRepo.save(new Patient(0l,nameField.getValue(),surnameField.getValue(),Integer.parseInt(ageField.getValue()),peselField.getValue()));
+                    }
+                }
+            add(patientLogin);
+        });
+    }
+    
+    public void setFormMenu(){
         FormLayout fl= new FormLayout();
         TextField nameField = new TextField();
         nameField.setLabel("Name:");
@@ -30,18 +55,9 @@ public class PatientUI extends VerticalLayout{
         TextField peselField = new TextField();
         peselField.setLabel("PESEL:");
         fl.add(nameField,surnameField,ageField,peselField);
-        Button login = new Button("SignIn/Login");
-        add(new Text("Witaj"),fl,login);
-        login.addClickListener(click->{
-            Optional patient=Optional.of(patientRepo.findByPesel(peselField.getValue()));
-                if(patient.isPresent()){
-                    add(new Text("Found "));
-                }
-                else{
-                    add(new Text("Adding new Patient "));
-                }  
-        });
-        
+    }
+    
+    public void setVisitMenu(){
         
     }
 }

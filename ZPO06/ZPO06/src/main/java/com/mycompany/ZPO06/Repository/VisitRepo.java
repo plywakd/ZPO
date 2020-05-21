@@ -7,8 +7,9 @@ package com.mycompany.ZPO06.Repository;
 
 import com.mycompany.ZPO06.Model.Visit;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public interface VisitRepo extends CrudRepository<Visit, Long>{
     
 }

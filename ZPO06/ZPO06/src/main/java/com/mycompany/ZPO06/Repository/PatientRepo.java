@@ -7,9 +7,11 @@ package com.mycompany.ZPO06.Repository;
 
 import com.mycompany.ZPO06.Model.Patient;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public interface PatientRepo extends CrudRepository<Patient, Long>{
     public Patient findByPesel(String pesel);
+    
 
 }
