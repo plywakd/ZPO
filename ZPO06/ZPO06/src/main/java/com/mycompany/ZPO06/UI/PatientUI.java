@@ -22,7 +22,16 @@ import lombok.extern.slf4j.Slf4j;
 public class PatientUI extends VerticalLayout{
     
     public PatientUI(PatientRepo patientRepo){
-        
+        FormLayout fl= new FormLayout();
+        TextField nameField = new TextField();
+        nameField.setLabel("Name:");
+        TextField surnameField = new TextField();
+        surnameField.setLabel("Surname:");
+        TextField ageField = new TextField();
+        ageField.setLabel("Age:");
+        TextField peselField = new TextField();
+        peselField.setLabel("PESEL:");
+        fl.add(nameField,surnameField,ageField,peselField);
         Button login = new Button("SignIn/Login");
         add(new Text("Witaj"),fl,login);
         TextField patientLogin = new TextField();
@@ -44,7 +53,7 @@ public class PatientUI extends VerticalLayout{
         });
     }
     
-    public void setFormMenu(){
+    /*public void setFormMenu(){
         FormLayout fl= new FormLayout();
         TextField nameField = new TextField();
         nameField.setLabel("Name:");
@@ -59,5 +68,5 @@ public class PatientUI extends VerticalLayout{
     
     public void setVisitMenu(){
         
-    }
+    }*/
 }
