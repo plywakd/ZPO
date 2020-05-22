@@ -94,20 +94,4 @@ public class PatientUI extends VerticalLayout{
         fl.add(visitLabel,visitDatePicker,visitTimePicker);
     }
 }
-    /*public void setFormMenu(){
-        FormLayout fl= new FormLayout();
-        TextField nameField = new TextField();
-        nameField.setLabel("Name:");
-        TextField surnameField = new TextField();
-        surnameField.setLabel("Surname:");
-        TextField ageField = new TextField();
-        ageField.setLabel("Age:");
-        TextField peselField = new TextField();
-        peselField.setLabel("PESEL:");
-        fl.add(nameField,surnameField,ageField,peselField);
-    }
     
-    public void setVisitMenu(){
-        
-    }*/
-}

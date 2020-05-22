@@ -24,9 +24,9 @@ public class Visit implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate date;
+    private LocalDate visitDate;
     private Long idDoctor;
     private Long idPatient;
-    private LocalTime time;
+    private LocalTime visitTime;
     private String symptoms;
 }
